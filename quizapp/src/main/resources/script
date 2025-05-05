@@ -8,4 +8,4 @@ CREATE TABLE question(
     rightAnswer VARCHAR(255),
     difficultylevel VARCHAR(255),
     category VARCHAR(255)
-);
+);git
