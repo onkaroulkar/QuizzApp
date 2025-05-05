@@ -1,0 +1,11 @@
+CREATE TABLE question(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    questionTitle VARCHAR(255),
+    option1 VARCHAR(255),
+    option2 VARCHAR(255),
+    option3 VARCHAR(255),
+    option4 VARCHAR(255),
+    rightAnswer VARCHAR(255),
+    difficultylevel VARCHAR(255),
+    category VARCHAR(255)
+);
