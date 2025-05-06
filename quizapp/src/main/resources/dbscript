@@ -1,6 +1,0 @@
- insert into question(id,questionTitle,option1,option2,option3,option4,rightAnswer,difficultylevel,category)             
- VALUES ('1','which java keyword is used to create a subclass','class','interface','extends','implements','extends','Easy','java'),
- ('2','In Java what is the default value of an uninitialized boolean variable','true','false','compile time error','run-time error','false','Easy','java'),
- ('3','What is the output of the following Java code snippen? \n int x = 5; \nSystem.out.println(X++);','4','5','6','compile error','5','Easy','java');
- 
- 
