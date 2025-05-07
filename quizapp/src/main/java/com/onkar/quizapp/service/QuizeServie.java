@@ -4,11 +4,11 @@ import com.onkar.quizapp.dao.QuizeDao;
 import com.onkar.quizapp.model.Question;
 import com.onkar.quizapp.model.Quize;
 import com.onkar.quizapp.model.QusetionWrapper;
+import com.onkar.quizapp.model.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,5 +40,19 @@ public class QuizeServie {
             quetionsForUsers.add(qw);
         }
         return new ResponseEntity<>(quetionsForUsers,HttpStatus.OK);
+    }
+
+    public ResponseEntity<Integer> calculateResult(Integer id, List<Response> responses) {
+        Quize quize = quizDao.getReferenceById(id);
+        List<Question> questions = quize.getQuestions();
+        int right =0;
+        int i=0;
+        for(Response response : responses){
+            if(response.getResponse().equals(questions.get(i).getRightAns())){
+                right++;
+            }
+            i++;
+        }
+        return new ResponseEntity<>(right, HttpStatus.OK);
     }
 }
